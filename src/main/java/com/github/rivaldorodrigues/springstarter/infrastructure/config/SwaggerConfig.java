@@ -11,18 +11,18 @@ import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.awt.print.Pageable;
 import java.util.Date;
 import java.util.List;
 
 @Configuration
-@EnableSwagger2WebMvc
+@EnableSwagger2
 public class SwaggerConfig {
 
     public static final String AUTHORIZATION_HEADER = "Authorization";
-    public static final String DEFAULT_INCLUDE_PATTERN = "/v1/.*";
+    public static final String DEFAULT_INCLUDE_PATTERN = "/api/v1/.*";
 
     @Bean
     public Docket api() {
@@ -47,13 +47,13 @@ public class SwaggerConfig {
 
     private ApiInfo infoApi() {
 
-        Contact contato = new Contact("Rivaldo Rodrigues", "", "hiva.rodrigues@gmail.com");
+        Contact contact = new Contact("Rivaldo Rodrigues", "", "hiva.rodrigues@gmail.com");
 
         return new ApiInfoBuilder()
                 .title("STARTER - API")
-                .description("Projeto base para criação de APIs com SpringBoot")
+                .description("Blueprint for Spring based API")
                 .version("v1")
-                .contact(contato)
+                .contact(contact)
                 .build();
     }
 

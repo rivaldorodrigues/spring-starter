@@ -4,8 +4,6 @@ logging:
     br.com.logique.springbootstarter: DEBUG
 
 spring:
-  profiles:
-    active: dev
   devtools:
     restart:
       enabled: true
@@ -31,21 +29,7 @@ spring:
         jdbc:
           lob.non_contextual_creation: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        cache:
-          use_query_cache: false
-          use_second_level_cache: true
-          region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
-  mail:
-    host: smtp.mailtrap.io
-    port: 2525
-    protocol: smtp
-    username: adffefa9d73907
-    password: a2dcd9d7c62dec
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true
-          quitwait: false
+#        cache:
+#          use_query_cache: false
+#          use_second_level_cache: true
+#          region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory

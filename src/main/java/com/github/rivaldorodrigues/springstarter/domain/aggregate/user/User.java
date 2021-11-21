@@ -21,6 +21,7 @@ import java.util.Set;
 @EnableJpaAuditing
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="\"User\"")
 public class User {
 
     @Id

@@ -1,4 +1,4 @@
-package com.github.rivaldorodrigues.springstarter.application.controllers;
+package com.github.rivaldorodrigues.springstarter.application.controllers.v1;
 
 import com.github.rivaldorodrigues.springstarter.domain.aggregate.profile.Profile;
 import com.github.rivaldorodrigues.springstarter.domain.aggregate.profile.ProfileRepository;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "profiles")
+@RequestMapping(value = "v1/profiles")
 public class ProfileController {
 
     private ProfileRepository profileRepository;
