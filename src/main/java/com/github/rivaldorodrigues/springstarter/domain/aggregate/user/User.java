@@ -48,11 +48,11 @@ public class User {
     @NotEmpty
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "perfil_usuario",
-            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "perfil_id", referencedColumnName = "id")
+            name = "profile_user",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "profile_id", referencedColumnName = "id")
     )
-    private Set<Profile> perfis;
+    private Set<Profile> profiles;
 
     @JsonIgnore
     private String passwordResetCode;

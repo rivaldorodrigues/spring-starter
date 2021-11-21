@@ -3,6 +3,7 @@ package com.github.rivaldorodrigues.springstarter.infrastructure.security;
 import com.github.rivaldorodrigues.springstarter.infrastructure.SystemClock;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -49,7 +50,7 @@ public class JwtTokenProvider {
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String createToken(Authentication authentication, String origin) {
+    public String createToken(@NotNull Authentication authentication, String origin) {
 
         int expirationTimeInMinutes = getExpirationTime(origin);
 
@@ -135,11 +136,13 @@ public class JwtTokenProvider {
         }
     }
 
+    @NotNull
     private Date generateNewExpiration(int expirationTimeInMinutes) {
         var currentDate = systemClock.currentDate();
         return new Date(currentDate.getTime() + (expirationTimeInMinutes * MILLISECONDS_PER_MINUTE));
     }
 
+    @NotNull
     private Date getRefreshDate(Date tokenCreationDate, int refreshInterval) {
         return new Date(tokenCreationDate.getTime() + (refreshInterval * MILLISECONDS_PER_MINUTE));
     }

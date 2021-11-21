@@ -22,5 +22,5 @@ public class Profile {
 
     @NotNull
     @Column(unique = true)
-    private String nome;
+    private String name;
 }

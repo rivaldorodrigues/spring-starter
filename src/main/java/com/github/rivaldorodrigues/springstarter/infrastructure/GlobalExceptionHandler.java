@@ -1,7 +1,7 @@
 package com.github.rivaldorodrigues.springstarter.infrastructure;
 
 import com.github.rivaldorodrigues.springstarter.application.exception.ValidationException;
-import com.github.rivaldorodrigues.springstarter.infrastructure.SystemClock;
+import com.github.rivaldorodrigues.springstarter.infrastructure.service.MessageService;
 import com.google.common.collect.Maps;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = {AccessDeniedException.class})
     public ResponseEntity handleAccessDeniedException(RuntimeException ex, WebRequest request) {
-        return handleExceptionInternal(ex, message.get("erro.acesso-negado"), new HttpHeaders(), HttpStatus.UNAUTHORIZED, request);
+        return handleExceptionInternal(ex, message.get("error.access-denied"), new HttpHeaders(), HttpStatus.UNAUTHORIZED, request);
     }
 
     @ExceptionHandler(value = {ValidationException.class})

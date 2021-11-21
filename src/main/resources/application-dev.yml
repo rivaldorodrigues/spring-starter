@@ -1,0 +1,51 @@
+logging:
+  level:
+    ROOT: INFO
+    br.com.logique.springbootstarter: DEBUG
+
+spring:
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: false
+  jackson:
+    serialization:
+      indent_output: true
+    parser:
+      STRICT_DUPLICATE_DETECTION: true
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_NAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      org.hibernate.envers.default_schema: auditoria
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob.non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        cache:
+          use_query_cache: false
+          use_second_level_cache: true
+          region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    protocol: smtp
+    username: adffefa9d73907
+    password: a2dcd9d7c62dec
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          quitwait: false
