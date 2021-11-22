@@ -23,13 +23,13 @@ spring:
     hibernate:
       ddl-auto: update
     properties:
-      org.hibernate.envers.default_schema: auditoria
+      org.hibernate.envers.default_schema: audit
       hibernate:
         format_sql: true
         jdbc:
           lob.non_contextual_creation: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
-#        cache:
-#          use_query_cache: false
-#          use_second_level_cache: true
-#          region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+        cache:
+          use_query_cache: false
+          use_second_level_cache: true
+          region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.rivaldorodrigues.springstarter.domain.aggregate.profile.Profile;
 import lombok.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.envers.Audited;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ import java.util.Set;
 @Data
 @Entity
 @Builder
+@Audited
 @EnableJpaAuditing
 @NoArgsConstructor
 @AllArgsConstructor

@@ -1,6 +1,8 @@
-package com.github.rivaldorodrigues.springstarter.infrastructure.security;
+package com.github.rivaldorodrigues.springstarter.infrastructure.security.jwt;
 
 import com.github.rivaldorodrigues.springstarter.infrastructure.SystemClock;
+import com.github.rivaldorodrigues.springstarter.infrastructure.security.Origin;
+import com.github.rivaldorodrigues.springstarter.infrastructure.security.TokenStatus;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;

@@ -1,4 +1,4 @@
-package com.github.rivaldorodrigues.springstarter.infrastructure.security;
+package com.github.rivaldorodrigues.springstarter.infrastructure.security.jwt;
 
 import com.github.rivaldorodrigues.springstarter.infrastructure.service.UserDetailsService;
 import lombok.AllArgsConstructor;

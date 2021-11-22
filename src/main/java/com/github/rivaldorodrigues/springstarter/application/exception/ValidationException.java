@@ -42,12 +42,12 @@ public class ValidationException extends NestedRuntimeException {
             return this;
         }
 
+        public boolean hasError() {
+            return !this.validation.isEmpty();
+        }
+
         public ValidationException build() {
             return new ValidationException(message, validation);
         }
-    }
-
-    public boolean hasError() {
-        return !this.validation.isEmpty();
     }
 }
